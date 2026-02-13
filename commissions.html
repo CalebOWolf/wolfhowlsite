@@ -14,15 +14,15 @@
 
     <style>
         :root {
-            --bg-color: #1a1a1a;
-            --box-color: #252525;
-            --text-color: #e0e0e0;
-            --accent-color: #4db8ff;
-            --border-color: #444;
+            --bg-color: #000000;      /* Pure Black */
+            --box-color: #0a0a0a;     /* Very dark gray for contrast */
+            --text-color: #33ff33;    /* Terminal Green */
+            --accent-color: #00cc00;  /* Slightly darker green for borders */
+            --highlight: #ffffff;     /* White for important numbers/prices */
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Courier New', Courier, monospace; /* Monospace font for terminal look */
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
@@ -30,7 +30,7 @@
             padding: 0;
         }
 
-        /* Container to center content and stop it from getting too wide */
+        /* Container to center content */
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -39,20 +39,22 @@
 
         /* Navigation Styling */
         nav {
-            background-color: #000;
+            background-color: #111;
             padding: 15px;
             text-align: center;
-            border-bottom: 2px solid var(--accent-color);
+            border-bottom: 2px solid var(--text-color);
         }
         nav a {
-            color: #fff;
+            color: var(--text-color);
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
             font-size: 1.1em;
+            text-transform: uppercase;
         }
         nav a:hover {
-            color: var(--accent-color);
+            color: var(--highlight);
+            text-shadow: 0 0 5px var(--text-color);
         }
 
         /* Section Styling */
@@ -60,16 +62,26 @@
             background-color: var(--box-color);
             padding: 25px;
             margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border: 1px solid var(--accent-color);
+            box-shadow: 0 0 10px rgba(51, 255, 51, 0.1); /* Subtle green glow */
         }
 
         h1, h2, h3 {
-            color: #fff;
+            color: var(--text-color);
             margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
-        h1 { text-align: center; color: var(--accent-color); }
-        h2 { border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 20px; }
+        h1 { 
+            text-align: center; 
+            border-bottom: 2px solid var(--text-color);
+            padding-bottom: 10px;
+        }
+        h2 { 
+            border-bottom: 1px dashed var(--accent-color); 
+            padding-bottom: 10px; 
+            margin-bottom: 20px; 
+        }
 
         /* Terms of Service Styling */
         .tos-list {
@@ -79,14 +91,16 @@
         .tos-list li {
             margin-bottom: 15px;
             padding-left: 15px;
-            border-left: 3px solid var(--accent-color);
+            border-left: 3px solid var(--text-color);
         }
+        
+        /* Warning Box */
         .warning-box {
-            background-color: #3d2a2a;
-            border: 1px solid #ff6b6b;
+            border: 1px solid var(--text-color);
             padding: 15px;
-            border-radius: 5px;
             margin-top: 15px;
+            background-color: #1a0000; /* Very dark red tint for warning background */
+            color: #ff3333; /* Red text for warning */
         }
 
         /* Pricing Table Styling */
@@ -98,15 +112,16 @@
         .pricing-table th, .pricing-table td {
             text-align: left;
             padding: 12px;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--accent-color);
         }
         .pricing-table th {
-            color: var(--accent-color);
+            color: var(--text-color);
             font-size: 1.1em;
+            border-bottom: 2px solid var(--text-color);
         }
         .price-tag {
             font-weight: bold;
-            color: #85e085; /* Light green for money */
+            color: var(--highlight); /* White price to pop against green */
         }
 
         /* Footer */
@@ -114,10 +129,12 @@
             text-align: center;
             padding: 20px;
             font-size: 0.9em;
-            color: #888;
+            color: var(--accent-color);
             margin-top: 40px;
+            border-top: 1px solid var(--accent-color);
         }
-        footer a { color: var(--accent-color); text-decoration: none; }
+        footer a { color: var(--text-color); text-decoration: none; }
+        footer a:hover { color: var(--highlight); }
     </style>
 </head>
 
@@ -136,15 +153,15 @@
         <h1>Wolf Howl | VRChat Commissions</h1>
         
         <section>
-            <h2>👋 About Me</h2>
+            <h2>>> System: About_Me</h2>
             <p>Hello! You may know me as an avid VR user, but I am now officially opening avatar development commissions for Unity (PC & Quest).</p>
             <p>While I am new to the commercial scene, I am not new to VRChat. I have been an active user since <strong>March 2018</strong>, working my way up from Visitor to experienced user. I have spent years learning Unity, reading documentation, watching tutorials, and managing my own personal avatar work.</p>
             <p><em>As time goes on and I gain new information about avatar development, I might expand my services. But for now, if you're eager to get started, please read my Terms of Service below to ensure we both benefit from this transaction.</em></p>
         </section>
 
         <section>
-            <h2>📜 Terms of Service (T.O.S.)</h2>
-            <p><em>Updated: 02/11/2026 - By commissioning me, you fully agree to these terms.</em></p>
+            <h2>>> System: Terms_Of_Service</h2>
+            <p><em>[STATUS: ACTIVE] Updated: 02/11/2026 - By commissioning me, you fully agree to these terms.</em></p>
             
             <ul class="tos-list">
                 <li><strong>Asset Ownership:</strong> You must OWN (have paid for or been gifted) your base model and any assets needed. You must show me proof of purchase if I need to upload to your account. <br><em>(Tip: If I don't own a base model/asset you need, we can discuss a workaround.)</em></li>
@@ -161,13 +178,13 @@
             </ul>
 
             <div class="warning-box">
-                <strong>🔞 NSFW / Adult Works:</strong><br>
+                <strong>[!WARNING!] 18+ / Adult Works:</strong><br>
                 I do accept 18+ work. However, you MUST share these details in DM <strong>before</strong> I start working on your avatar base. Please DM me for details on how to access this service.
             </div>
         </section>
 
         <section>
-            <h2>💎 Pricing & Services</h2>
+            <h2>>> System: Pricing & Services</h2>
             
             <h3>Base Package</h3>
             <table class="pricing-table">
@@ -241,7 +258,7 @@
         </section>
 
         <section>
-            <h2>📩 Ready to Commission?</h2>
+            <h2>>> System: Contact</h2>
             <p>If there is anything else I haven't mentioned, I am absolutely happy to take DMs about it.</p>
             <p>I am doing this not just to help with my financial troubles, but because of the kindness and joy avatar creation brings. I want to share that joy with you—hopping into a world with friends and seeing your favorite character come to life is an amazing feeling. It happened for me with my first avatar (Zab's Wolf), and I want to do that for you.</p>
             <p><strong>Thank you for considering me as your avatar creator. See you in the future and stay Pawsitive! ^W^</strong></p>
